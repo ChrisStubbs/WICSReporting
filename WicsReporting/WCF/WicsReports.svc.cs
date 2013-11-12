@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
+﻿using System.Linq;
 using System.ServiceModel.Activation;
-using System.Text;
 using System.Web;
 using WicsReporting.Classes;
 namespace WicsReporting.WCF
@@ -27,7 +22,8 @@ namespace WicsReporting.WCF
         public string Summary(string measure, string tradingParty, string financialYear)
         {
             var data = WicsPerformanceSummaryTestData.GetData().Where(x=> x.Measure.Key == measure && x.TradingParty == tradingParty).ToList();
-            return new WicsPerformanceSummaryHtmlTable(data).HTML;
+            
+return new WicsPerformanceSummaryHtmlTable(data).HTML;
         }
     }
 }
